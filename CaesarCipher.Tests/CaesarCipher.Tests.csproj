@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CaesarCipher\CaesarCipher.csproj" />
+    <ProjectReference Include="..\CaesarCipher\CaesarCipher.Core.csproj" />
   </ItemGroup>
 
 </Project>
