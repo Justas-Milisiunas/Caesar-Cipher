@@ -19,7 +19,7 @@ namespace CaesarCipher
 
         private void CheckIfLetter(char letter)
         {
-            if(!char.IsLetter(letter))
+            if (!char.IsLetter(letter))
             {
                 throw new ArgumentException("Bad character provided. Only letters can be shifted");
             }
@@ -33,7 +33,7 @@ namespace CaesarCipher
         private int NormalizeShift(int shift)
         {
             shift %= ALPHABET_LENGTH;
-            if(shift < 0)
+            if (shift < 0)
             {
                 shift = ALPHABET_LENGTH - Math.Abs(shift);
             }

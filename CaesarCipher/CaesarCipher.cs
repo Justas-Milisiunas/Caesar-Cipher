@@ -29,7 +29,7 @@ namespace CaesarCipher
 
         private void CheckIfTextValid(string text)
         {
-            if(!textValidator.IsValid(text))
+            if (!textValidator.IsValid(text))
             {
                 throw new ArgumentException("Invalid text provided!");
             }
@@ -47,7 +47,7 @@ namespace CaesarCipher
                     modifiedText.Append(letter);
                     continue;
                 }
-                
+
                 char shiftedLetter = letterShifter.Shift(letter, shift);
                 modifiedText.Append(shiftedLetter);
             }
