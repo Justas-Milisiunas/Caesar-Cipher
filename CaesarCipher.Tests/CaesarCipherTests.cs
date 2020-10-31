@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace CaesarCipher.Tests
 {
@@ -42,6 +43,5 @@ namespace CaesarCipher.Tests
 
             Assert.AreEqual(expectedPlainText, actualPlainText);
         }
-
     }
 }
