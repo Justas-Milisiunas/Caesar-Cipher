@@ -4,18 +4,15 @@ using System.Text;
 
 namespace CaesarCipher
 {
-    class CaesarCipher : ICaesarCipher
+    public class CaesarCipher
     {
-        private readonly ITextValidator textValidator;
+        private readonly TextValidator textValidator;
+        private readonly LetterShifter letterShifter;
 
         public CaesarCipher()
         {
-            textValidator = new CaesarTextValidator();
-        }
-
-        public CaesarCipher(ITextValidator textValidator)
-        {
-            this.textValidator = textValidator;
+            textValidator = new TextValidator();
+            letterShifter = new LetterShifter();
         }
 
         public string Encrypt(string plainText, int shift)
@@ -38,29 +35,24 @@ namespace CaesarCipher
             }
         }
 
-        private static string CaesarCipherAlhorithm(string text, int shift)
+        private string CaesarCipherAlhorithm(string text, int shift)
         {
             char[] letters = text.ToCharArray();
             StringBuilder modifiedText = new StringBuilder();
 
             foreach (var letter in letters)
             {
-                if (Char.IsWhiteSpace(letter))
+                if (char.IsWhiteSpace(letter))
                 {
                     modifiedText.Append(letter);
                     continue;
                 }
-
-                char shiftedLetter = ShiftLetter(letter, shift);
+                
+                char shiftedLetter = letterShifter.Shift(letter, shift);
                 modifiedText.Append(shiftedLetter);
             }
 
             return modifiedText.ToString();
-        }
-
-        private static char ShiftLetter(char letter, int shift)
-        {
-            return (char)(letter + shift);
         }
     }
 }
