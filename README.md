@@ -19,16 +19,15 @@ If we decrypt, we get the same text as original.
 
     git clone https://github.com/Justas-Milisiunas/Caesar-Cipher.git
     cd Caesar-Cipher
-    dotnet restore
-    dotnet build
+    dotnet build CaesarCipher/CaesarCipher.sln
 
 ## Run demo
 
-    dotnet run
+    dotnet run --project CaesarCipher.Demo 
 
 ## Run tests
 
-    dotnet test
+    dotnet test CaesarCipher.Tests
 
 # Tests coverage report
 
