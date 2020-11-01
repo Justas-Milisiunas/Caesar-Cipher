@@ -43,5 +43,23 @@ namespace CaesarCipher.Tests
 
             Assert.AreEqual(expectedPlainText, actualPlainText);
         }
+
+        [DataRow("1235 5646", DisplayName = "Numbers")]
+        [DataRow("!@#$", DisplayName = "Random symbols")]
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Encryption_Test_InValidPlainTextProvided(string plainText)
+        {
+            caesarCipher.Encrypt(plainText, 1);
+        }
+
+        [DataRow("1235 5646", DisplayName = "Numbers")]
+        [DataRow("!@#$", DisplayName = "Random symbols")]
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void Decryption_Test_InValidCipherTextProvided(string cipherText)
+        {
+            caesarCipher.Decrypt(cipherText, 1);
+        }
     }
 }
