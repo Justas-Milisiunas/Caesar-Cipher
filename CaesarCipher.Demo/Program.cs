@@ -45,7 +45,7 @@ namespace CaesarCipher.Demo
 
         static void RunDemo()
         {
-            CaesarCipher caesarCipher = new CaesarCipher();
+            CaesarCipher caesarCipher = new CaesarCipher(new TextValidator(), new LetterShifter());
             UserInputCapture userInput = new UserInputCapture();
 
             Console.Write("Enter plaintext: ");

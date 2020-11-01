@@ -7,6 +7,7 @@ namespace CaesarCipher
     public class LetterShifter
     {
         private const int ALPHABET_LENGTH = 26;
+
         public char Shift(char letter, int shift)
         {
             CheckIfLetter(letter);
