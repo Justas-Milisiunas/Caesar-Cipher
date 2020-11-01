@@ -11,7 +11,7 @@ namespace CaesarCipher.Tests
         [TestInitialize]
         public void Startup()
         {
-            caesarCipher = new CaesarCipher();
+            caesarCipher = new CaesarCipher(new TextValidator(), new LetterShifter());
         }
 
         [DataRow("ABCD", 2, "CDEF", DisplayName = "Uppercase letters")]

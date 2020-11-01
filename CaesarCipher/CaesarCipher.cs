@@ -9,10 +9,10 @@ namespace CaesarCipher
         private readonly TextValidator textValidator;
         private readonly LetterShifter letterShifter;
 
-        public CaesarCipher()
+        public CaesarCipher(TextValidator textValidator, LetterShifter letterShifter)
         {
-            textValidator = new TextValidator();
-            letterShifter = new LetterShifter();
+            this.textValidator = textValidator;
+            this.letterShifter = letterShifter;
         }
 
         public string Encrypt(string plainText, int shift)
