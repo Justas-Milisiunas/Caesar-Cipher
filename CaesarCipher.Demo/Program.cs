@@ -15,7 +15,7 @@ namespace CaesarCipher.Demo
             {
                 RunDemoWithExceptionHandling();
 
-                Console.WriteLine("Type q to quit or any key to continue: ");
+                Console.Write("Type q to quit or any key to continue: ");
                 string userChoice = Console.ReadLine();
 
                 if (userChoice == "q")
@@ -57,8 +57,9 @@ namespace CaesarCipher.Demo
             string cipherText = caesarCipher.Encrypt(plainText, shift);
             string decryptedText = caesarCipher.Decrypt(cipherText, shift);
 
+            Console.WriteLine();
             Console.WriteLine($"Cipher text: {cipherText}");
-            Console.WriteLine($"Decrypted cipher text: {decryptedText}");
+            Console.WriteLine($"Decrypted cipher text: {decryptedText}\n");
         }
     }
 }
